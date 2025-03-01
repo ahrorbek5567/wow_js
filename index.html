@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>10-dars</title>
+  <link rel="stylesheet" href="css/libs/animate.css">
+  <link rel="stylesheet" href="css/site.css">
+  
+  <style>
+    .wow:first-child {
+      visibility: hidden;
+    }
+    .save img{
+      transition: 1s;
+    }
+    .save img:hover{
+      transform: scale(1.2);
+    }
+    .airplane{
+      overflow: hidden;
+    }
+  </style>
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div id="container airplane">
+    <header>
+      <h1 style="text-align: center;">Ahrorbek</h1>
+    </header>
+    <div class="row">
+      <div id="main">
+         <section class="wow fadeInDown col-12 col-sm-12">
+            <img class="save" width="50%" height="300px" src="download.jpg" alt="">
+         </section>
+         
+         <section class="wow pulse col-12 col-sm-12"  data-wow-iteration="infinite" data-wow-duration="1s">
+            <img width="50%" height="300px" src="download (1).jpg" alt="">
+         </section>
+         
+         <section class="section wow slideInRight col-12 col-sm-12" data-wow-delay="1s">
+            <img width="50%" height="400px" class="mb-5" src="download (1).jpg" alt="">
+         </section><br>
+         <section class="section wow bounceInLeft col-12 col-sm-12" data-wow-offset="300">
+            <img width="50%" height="400px" class="mb-5" src="download (1).jpg" alt="">
+         </section><br>
+         <section class="section wow slideInLeft mb-5 col-12 col-sm-12" data-wow-duration="3s">
+            <img width="50%" height="400px" class="mb-5" src="download (1).jpg" alt="">
+         </section>
+      
+       </div>
+    </div>
+  </div>
+  <script src="dist/wow.js"></script>
+  <script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       100,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    document.getElementById('moar').onclick = function() {
+      var section = document.createElement('section');
+      section.className = 'section--purple wow fadeInDown';
+      this.parentNode.insertBefore(section, this);
+    };
+  </script>
+</body>
+</html>
